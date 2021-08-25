@@ -11,11 +11,11 @@ var stream = T.stream('statuses/filter', { track: 'et ce ratio'})
  
 stream.on('tweet', function (tweet) {
   console.log("Tweet de " + tweet.user.name + " repéré")
-  
-  T.post('statuses/update', { 
+  console.log(tweet.text)
+  /*T.post('statuses/update', { 
 		status: "@" + tweet.user.screen_name +' il s\'agirait d\'arrêter avec cette phrase c plus drôle',
 		in_reply_to_status_id: tweet.id_str
 	}, function(err, data, response) {
 	console.log("Réponse envoyé à " + tweet.user.name)
-  })
+  })*/
 })
